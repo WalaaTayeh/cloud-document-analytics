@@ -1,5 +1,7 @@
 # 📊 Cloud-Based Document Analytics and Classification
 
+🔗 **Live App**: [Open the Streamlit Web App](https://cloud-document-analytics-dmyi9nuyu3wjx3adw3qpsj.streamlit.app)
+
 This project is a **cloud-ready, Jupyter-based application** for collecting, searching, sorting, and classifying a large collection of academic documents. It uses arXiv's public API to fetch abstracts and PDFs from multiple categories and applies machine learning for classification.
 
 ---
