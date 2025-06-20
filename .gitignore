@@ -1,0 +1,6 @@
+# Ignore dataset and downloaded PDFs
+arxiv_dataset.csv
+downloaded_pdfs/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
