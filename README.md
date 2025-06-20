@@ -6,16 +6,16 @@ This project is a **cloud-ready, Jupyter-based application** for collecting, sea
 
 ## 🔧 Features
 
-- **📥 Document Collection**  
+- **Document Collection**  
   Automatically collects thousands of academic abstracts and PDF links from arXiv using web scraping (no manual upload required).
 
-- **📑 Sorting by Title**  
+- **Sorting by Title**  
   All fetched documents are sorted by their extracted titles (not filenames).
 
-- **🔍 Search with Highlighting**  
+- **Search with Highlighting**  
   You can search the downloaded PDFs for keywords and display highlighted matches directly in the console.
 
-- **🧠 Classification**  
+- **Classification**  
   A Random Forest classifier trained on abstract content categorizes documents into:
 
   - AI/ML
@@ -24,7 +24,7 @@ This project is a **cloud-ready, Jupyter-based application** for collecting, sea
   - Neuroscience
   - Probability
 
-- **📈 Analytics & Statistics**  
+- **Analytics & Statistics**  
   The notebook prints:
   - Number of documents and unique categories
   - Classification training time
@@ -41,3 +41,64 @@ This project is a **cloud-ready, Jupyter-based application** for collecting, sea
 git clone https://github.com/WalaaTayeh/cloud-document-analytics.git
 cd cloud-document-analytics
 ```
+
+### 2. Install dependencies
+
+Make sure Python 3.10 or higher is installed, then run:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the app locally
+
+To launch the Streamlit interface, run:
+
+```bash
+streamlit run app.py
+```
+
+Then open your browser and go to:
+
+```
+http://localhost:8501
+```
+
+### 4. Upload or generate dataset
+
+You can upload your `arxiv_dataset.csv` file through the sidebar in the Streamlit interface.  
+Alternatively, you can generate this file by running the Jupyter notebook:
+
+```bash
+jupyter notebook research_classifier.ipynb
+```
+
+The notebook will scrape data from arXiv and save it as `arxiv_dataset.csv`.
+
+### 5. Download PDFs
+
+After the dataset is loaded, specify how many papers you want to download.  
+The app will download those PDFs automatically using the arXiv links and save them in the `downloaded_pdfs/` folder.
+
+### 6. Use search, sort, and classify
+
+- **Search**: Enter a keyword in the search field. The app will look inside PDFs and highlight matches with context.
+- **Sort**: Click "Sort by Title" to organize documents alphabetically based on actual document titles (not filenames).
+- **Classify**: Click "Run Classifier" to classify documents using a Random Forest model. Results will show a confusion matrix, per-class F1 scores, and top TF-IDF features used in the model.
+
+---
+
+## 📁 Project Structure
+
+```
+cloud-document-analytics/
+│
+├── app.py                      # Streamlit app interface
+├── research_classifier.ipynb   # Jupyter notebook for data scraping & ML
+├── requirements.txt            # Required Python libraries
+├── arxiv_dataset.csv           # Metadata file (can be uploaded or generated)
+├── downloaded_pdfs/            # Directory for downloaded PDFs
+└── README.md                   # Project documentation
+```
+
+---
